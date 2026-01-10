@@ -130,7 +130,8 @@ def main():
         success = send_line_message(message, access_token, user_id)
         
         if success:
-            print("LINE 通知已成功發送", file=sys.stderr)
+            # 成功時不輸出任何內容，避免被 Cursor 視為錯誤
+            # 通知已成功發送到 LINE，無需額外輸出
             sys.exit(0)
         else:
             print("LINE 通知發送失敗", file=sys.stderr)
